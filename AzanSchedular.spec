@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 a = Analysis(
-    ['AzanSchedular/azan_app.py'],
+    ['AzanSchedular\\azan_app.py'],
     pathex=[],
     binaries=[],
     datas=[
@@ -10,16 +10,7 @@ a = Analysis(
         ('AzanSchedular/config/*', 'config'),
         ('AzanSchedular/media/*', 'media'),
     ],
-    hiddenimports=[
-        'beautifulsoup4',
-        'pyatv',
-        'python-dotenv',
-        'python_dateutil',
-        'Requests',
-        'tenacity',
-        'fastapi',
-        'uvicorn',
-    ],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
