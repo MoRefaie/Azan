@@ -38,8 +38,11 @@ jobs:
         run: |
           pyinstaller AzanSchedular.spec
 
+      - name: List dist folder
+        run: dir dist
+
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
           name: AzanSchedular-exe
-          path: AzanSchedular.exe
+          path: dist/AzanSchedular.exe
