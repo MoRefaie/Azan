@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 a = Analysis(
-    ['AzanSchedular\\azan_app.py'],
+    ['AzanSchedular/azan_app.py'],
     pathex=[],
     binaries=[],
     datas=[
