@@ -1,0 +1,13 @@
+# pyenv
+.python-version
+
+# Environments
+#.env
+.venv
+
+# macOS specific
+.DS_Store
+
+# Build and distribution directories
+build/
+dist/
