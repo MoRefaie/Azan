@@ -13,6 +13,8 @@ packages = [
     'uvicorn',
     'pystray',
     'pillow',
+    'aiofiles',
+    'python-multipart',
 ]
 
 all_datas = []
