@@ -1,25 +1,40 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.utils.hooks import collect_all
+
+# List of packages you want to collect all for
+packages = [
+    'bs4',
+    'pyatv',
+    'dateutil',
+    'requests',
+    'tenacity',
+    'fastapi',
+    'uvicorn',
+    'pystray',
+    'pillow',
+]
+
+all_datas = []
+all_binaries = []
+all_hiddenimports = []
+
+for pkg in packages:
+    datas, binaries, hiddenimports = collect_all(pkg)
+    all_datas += datas
+    all_binaries += binaries
+    all_hiddenimports += hiddenimports
+
 a = Analysis(
     ['AzanSchedular/azan_app.py'],
     pathex=[],
-    binaries=[],
+    binaries=all_binaries,
     datas=[
         ('AzanSchedular/*.py', '.'),
-        ('AzanSchedular/.env', '.env'),
         ('AzanSchedular/config/*', 'config'),
         ('AzanSchedular/media/*', 'media'),
-    ],
-    hiddenimports=[
-        'beautifulsoup4',
-        'pyatv',
-        'python-dotenv',
-        'python_dateutil',
-        'Requests',
-        'tenacity',
-        'fastapi',
-        'uvicorn',
-    ],
+    ] + all_datas,
+    hiddenimports=all_hiddenimports,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -43,7 +58,7 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
