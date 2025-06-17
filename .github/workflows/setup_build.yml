@@ -1,4 +1,4 @@
-name: Build Azan Scheduler and UI
+name: Build Azan Scheduler and UI Setup
 
 on:
   push:
