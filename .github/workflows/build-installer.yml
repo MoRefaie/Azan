@@ -22,6 +22,7 @@ jobs:
           branch: main
           name: AzanSchedular
           path: ./dist/AzanSchedular
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download AzanUI artifact
         uses: dawidd6/action-download-artifact@v3
@@ -32,6 +33,7 @@ jobs:
           branch: main
           name: AzanUI
           path: ./dist/AzanUI
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Move executables to dist
         run: |
