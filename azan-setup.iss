@@ -28,11 +28,11 @@ ArchitecturesAllowed=x64compatible
 ; the 64-bit view of the registry.
 ArchitecturesInstallIn64BitMode=x64compatible
 DisableProgramGroupPage=yes
-LicenseFile=C:\Dev\IEPrayer\Azan\License.txt
+LicenseFile={#SourcePath}\License.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
-OutputDir=C:\Dev\IEPrayer\Azan\dist
+OutputDir={#SourcePath}\dist
 OutputBaseFilename=Azan_setup
-SetupIconFile=C:\Dev\IEPrayer\Azan\icon.ico
+SetupIconFile={#SourcePath}\icon.ico
 SolidCompression=yes
 WizardStyle=modern
 
@@ -43,8 +43,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Dev\IEPrayer\Azan\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Dev\IEPrayer\Azan\dist\{#MyWebExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}\dist\{#MyWebExeName}"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

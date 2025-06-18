@@ -1,0 +1,73 @@
+name: Build Azan Installer
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build-installer:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Azan repo
+        uses: actions/checkout@v4
+
+      - name: Download AzanSchedular artifact
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: build-scheduler.yml
+          repo: MoRefaie/AzanSchedular
+          workflow_conclusion: success
+          branch: main
+          name: AzanSchedular
+          path: ./dist/AzanSchedular
+
+      - name: Download AzanUI artifact
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: build-ui.yml
+          repo: MoRefaie/AzanUI
+          workflow_conclusion: success
+          branch: main
+          name: AzanUI
+          path: ./dist/AzanUI
+
+      - name: Move executables to dist
+        run: |
+          move ./dist/AzanSchedular/AzanSchedular.exe ./dist/AzanSchedular.exe
+          move ./dist/AzanUI/server-win.exe ./dist/AzanUI.exe
+
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress
+
+      - name: Build installer
+        run: |
+          "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" azan-setup.iss
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: AzanInstaller
+          path: ./dist/Azan_setup.exe
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+
+      - name: Upload installer to Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/Azan_setup.exe
+          asset_name: Azan_setup.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
