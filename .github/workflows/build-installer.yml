@@ -16,11 +16,11 @@ jobs:
       - name: Download AzanSchedular artifact
         uses: dawidd6/action-download-artifact@v3
         with:
-          workflow: build-scheduler.yml
+          workflow: build-schedular.yml
           repo: MoRefaie/AzanSchedular
           workflow_conclusion: success
           branch: main
-          name: AzanSchedular
+          name: AzanSchedular-exe
           path: ./dist/AzanSchedular
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -31,7 +31,7 @@ jobs:
           repo: MoRefaie/AzanUI
           workflow_conclusion: success
           branch: main
-          name: AzanUI
+          name: AzanUI-exe
           path: ./dist/AzanUI
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
