@@ -38,7 +38,7 @@ jobs:
       - name: Move executables to dist
         run: |
           move ./dist/AzanSchedular/AzanSchedular.exe ./dist/AzanSchedular.exe
-          move ./dist/AzanUI/AzanUIs.exe ./dist/AzanUI.exe
+          move ./dist/AzanUI/AzanUI.exe ./dist/AzanUI.exe
 
       - name: Install Inno Setup
         run: choco install innosetup --no-progress
