@@ -41,7 +41,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "autostart"; Description: "Start {#MyAppName} automatically when Windows starts"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checked
+Name: "autostart"; Description: "Start {#MyAppName} automatically when Windows starts"; GroupDescription: "{cm:AdditionalIcons}"
 
 [Files]
 Source: "{#SourcePath}\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
