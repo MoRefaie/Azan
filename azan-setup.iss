@@ -51,9 +51,7 @@ Source: "{#SourcePath}\dist\{#MyWebExeName}"; DestDir: "{app}"; Flags: ignorever
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
-
-[Registry]
-Root: HKCU; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "{#MyAppName}"; ValueData: "cmd /c ""cd /d ""{app}"" && ""{app}\{#MyAppExeName}"""""; Flags: uninsdeletevalue; Tasks: autostart
+Name: "{autostartup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"; Tasks: autostart
 
 [Dirs]
 Name: "{app}"; Permissions: "everyone-modify"
