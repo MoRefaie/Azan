@@ -3,9 +3,37 @@
 This is the monorepo for the Azan project, containing both the backend (AzanScheduler) and frontend (AzanUI) applications for managing and scheduling Azan (Islamic prayer calls).
 
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/MoRefaie/Azan/Azan-Build.yml?branch=main)
+![Build Status](https://img.shields.io/github/actions/workflow/status/MoRefaie/Azan/Azan-Build.yml?event=release)
+![Latest Release](https://img.shields.io/github/v/release/MoRefaie/Azan)
 ![License](https://img.shields.io/github/license/MoRefaie/Azan)
 
+## Installation
+
+Azan can be installed on both **Linux** and **Windows**.
+
+### 🔹 Windows Installation
+
+Download the latest Windows installer:
+
+👉 [Azan_setup.exe](https://github.com/MoRefaie/Azan/releases/latest/download/Azan_setup.exe)
+
+### 🔹 Linux Installation
+
+You can install Azan on Linux using either the one‑line installer or the packaged installer.
+
+#### **Option 1 — One‑line installer**
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/MoRefaie/Azan/main/install-linux.sh)"
+```
+
+#### **Option 2 — Download installer package**
+
+```bash
+wget https://github.com/MoRefaie/Azan/releases/latest/download/Azan-linux-installer.tar.gz
+tar -xzf Azan-linux-installer.tar.gz
+sudo bash install-linux.sh
+```
 ## Git Repositories
 
 - **Monorepo (this repo):** [Azan Monorepo](https://github.com/MoRefaie/Azan)
