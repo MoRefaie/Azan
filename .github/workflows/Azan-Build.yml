@@ -89,12 +89,12 @@ jobs:
 
       - name: Prepare tarball contents
         run: |
-          mv ./dist/AzanScheduler-linux/AzanScheduler .
-          mv ./dist/AzanUI-linux/AzanUI .
+          mv ./dist/AzanScheduler-linux/AzanScheduler ./dist/AzanScheduler
+          mv ./dist/AzanUI-linux/AzanUI ./dist/AzanUI
 
       - name: Package Linux installer
         run: |
-          tar -czvf Azan-linux-installer.tar.gz AzanScheduler AzanUI
+          tar -czvf Azan-linux-installer.tar.gz -C dist AzanScheduler AzanUI
 
       - name: Upload Linux installer artifact
         id: out_linux
