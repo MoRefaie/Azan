@@ -1,6 +1,6 @@
-[submodule "AzanScheduler"]
-	path = AzanScheduler
-	url = https://github.com/MoRefaie/AzanScheduler.git
 [submodule "AzanUI"]
 	path = AzanUI
 	url = https://github.com/MoRefaie/AzanUI.git
+[submodule "AzanScheduler"]
+	path = AzanScheduler
+	url = https://github.com/MoRefaie/AzanScheduler.git
