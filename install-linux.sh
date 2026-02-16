@@ -13,7 +13,7 @@ mkdir -p $TMP_DIR
 cd $TMP_DIR
 
 echo "Downloading Azan installer package..."
-curl -fsSL -o Azan-linux-installer.tar.gz "$RELEASE_URL"
+curl -fsSL --progress-bar -o Azan-linux-installer.tar.gz "$RELEASE_URL"
 
 echo "Extracting package..."
 tar -xzf Azan-linux-installer.tar.gz
