@@ -28,6 +28,9 @@ wget --progress=bar:force -O Azan-linux-installer.tar.gz "$RELEASE_URL"
 echo -e "${YELLOW}Extracting package...${RESET}"
 tar -xzf Azan-linux-installer.tar.gz
 
+echo -e "${YELLOW}Stopping Azan service if running...${RESET}"
+systemctl stop azan 2>/dev/null || true
+
 echo -e "${YELLOW}Creating install directory...${RESET}"
 mkdir -p "$INSTALL_DIR"
 
@@ -59,10 +62,9 @@ User=root
 WantedBy=multi-user.target
 SERVICE
 
-echo -e "${YELLOW}Enabling service...${RESET}"
+echo -e "${YELLOW}Enabling and restarting service...${RESET}"
 systemctl daemon-reload
-systemctl enable azan
-systemctl start azan
+systemctl restart azan || systemctl start azan
 
 echo -e "${YELLOW}Cleaning up...${RESET}"
 rm -rf "$TMP_DIR"
@@ -91,4 +93,4 @@ echo -e "${BLUE}If you want to run Azan manually (not recommended), use:${RESET}
 echo "  azan"
 echo ""
 echo -e "${GREEN}Thank you for installing Azan!${RESET}"
-
+echo ""
