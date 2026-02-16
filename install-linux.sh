@@ -64,6 +64,7 @@ SERVICE
 
 echo -e "${YELLOW}Enabling and restarting service...${RESET}"
 systemctl daemon-reload
+systemctl enable azan
 systemctl restart azan || systemctl start azan
 
 echo -e "${YELLOW}Cleaning up...${RESET}"
