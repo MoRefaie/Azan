@@ -19,14 +19,14 @@ jobs:
       - name: Checkout Azan repo
         uses: actions/checkout@v4
 
-      - name: Download AzanSchedular artifact
+      - name: Download AzanScheduler artifact
         uses: dawidd6/action-download-artifact@v3
         with:
-          workflow: AzanSchedular-Build.yml
-          repo: MoRefaie/AzanSchedular
+          workflow: AzanScheduler-Build.yml
+          repo: MoRefaie/AzanScheduler
           workflow_conclusion: success
-          name: AzanSchedular-win
-          path: ./dist/AzanSchedular-win
+          name: AzanScheduler-win
+          path: ./dist/AzanScheduler-win
 
       - name: Download AzanUI artifact
         uses: dawidd6/action-download-artifact@v3
@@ -40,7 +40,7 @@ jobs:
 
       - name: Move executables to dist
         run: |
-          move ./dist/AzanSchedular-win/AzanSchedular.exe ./dist/AzanSchedular.exe
+          move ./dist/AzanScheduler-win/AzanScheduler.exe ./dist/AzanScheduler.exe
           move ./dist/AzanUI-win/AzanUI.exe ./dist/AzanUI.exe
 
       - name: Install Inno Setup
@@ -66,14 +66,14 @@ jobs:
       - name: Checkout Azan repo
         uses: actions/checkout@v4
 
-      - name: Download AzanSchedular Linux artifact
+      - name: Download AzanScheduler Linux artifact
         uses: dawidd6/action-download-artifact@v3
         with:
-          workflow: AzanSchedular-Build.yml
-          repo: MoRefaie/AzanSchedular
+          workflow: AzanScheduler-Build.yml
+          repo: MoRefaie/AzanScheduler
           workflow_conclusion: success
-          name: AzanSchedular-linux
-          path: ./dist/AzanSchedular-linux
+          name: AzanScheduler-linux
+          path: ./dist/AzanScheduler-linux
 
       - name: Download AzanUI Linux artifact
         uses: dawidd6/action-download-artifact@v3
@@ -85,16 +85,16 @@ jobs:
           path: ./dist/AzanUI-linux
 
       - name: Make binaries executable
-        run: chmod +x ./dist/AzanSchedular-linux/AzanSchedular ./dist/AzanUI-linux/AzanUI
+        run: chmod +x ./dist/AzanScheduler-linux/AzanScheduler ./dist/AzanUI-linux/AzanUI
 
       - name: Prepare tarball contents
         run: |
-          mv ./dist/AzanSchedular-linux/AzanSchedular .
+          mv ./dist/AzanScheduler-linux/AzanScheduler .
           mv ./dist/AzanUI-linux/AzanUI .
 
       - name: Package Linux installer
         run: |
-          tar -czvf Azan-linux-installer.tar.gz AzanSchedular AzanUI
+          tar -czvf Azan-linux-installer.tar.gz AzanScheduler AzanUI
 
       - name: Upload Linux installer artifact
         id: out_linux
