@@ -1,11 +1,11 @@
 # Contributing to Azan
 
-Thank you for your interest in contributing to the Azan project! This monorepo contains both the backend (AzanSchedular) and frontend (AzanUI) applications.
+Thank you for your interest in contributing to the Azan project! This monorepo contains both the backend (AzanScheduler) and frontend (AzanUI) applications.
 
 ## How to Contribute
 
 - **Bug Reports & Feature Requests:**
-  - Please use the issue templates in the respective subproject (`AzanSchedular` or `AzanUI`).
+  - Please use the issue templates in the respective subproject (`AzanScheduler` or `AzanUI`).
 - **Pull Requests:**
   - Fork the repo and create a new branch for your feature or bugfix.
   - Make your changes and ensure all tests pass.
@@ -17,7 +17,7 @@ Thank you for your interest in contributing to the Azan project! This monorepo c
 
 ## Tests
 - Run all tests before submitting a pull request.
-- For backend: see `AzanSchedular/tests/`
+- For backend: see `AzanScheduler/tests/`
 - For frontend: see `AzanUI/tests/`
 
 ## Documentation

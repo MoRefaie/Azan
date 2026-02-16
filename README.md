@@ -1,15 +1,15 @@
 # Azan
 
-This is the monorepo for the Azan project, containing both the backend (AzanSchedular) and frontend (AzanUI) applications for managing and scheduling Azan (Islamic prayer calls).
+This is the monorepo for the Azan project, containing both the backend (AzanScheduler) and frontend (AzanUI) applications for managing and scheduling Azan (Islamic prayer calls).
 
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/MoRefaie/Azan/build-installer.yml?branch=main)
+![Build Status](https://img.shields.io/github/actions/workflow/status/MoRefaie/Azan/Azan-Build.yml?branch=main)
 ![License](https://img.shields.io/github/license/MoRefaie/Azan)
 
 ## Git Repositories
 
 - **Monorepo (this repo):** [Azan Monorepo](https://github.com/MoRefaie/Azan)
-- **Backend:** [AzanSchedular](https://github.com/MoRefaie/AzanSchedular)
+- **Backend:** [AzanScheduler](https://github.com/MoRefaie/AzanScheduler)
 - **Frontend:** [AzanUI](https://github.com/MoRefaie/AzanUI)
 
 ## Architecture & Flow
@@ -25,14 +25,14 @@ This is the monorepo for the Azan project, containing both the backend (AzanSche
 ```
 
 - **Azan UI (Web):** Modern React dashboard ([AzanUI](https://github.com/MoRefaie/AzanUI))
-- **FastAPI API:** Backend API ([AzanSchedular](https://github.com/MoRefaie/AzanSchedular))
+- **FastAPI API:** Backend API ([AzanScheduler](https://github.com/MoRefaie/AzanScheduler))
 - **Scheduler Core:** Handles prayer time logic and notifications
 - **System Tray:** Native integration for quick access and notifications
 
 ## Structure
 
-- `AzanSchedular/` — Python FastAPI backend for scheduling, configuration, and system tray integration.
-- `AzanUI/` — Modern React (Vite, TypeScript, Tailwind) frontend dashboard for managing AzanSchedular.
+- `AzanScheduler/` — Python FastAPI backend for scheduling, configuration, and system tray integration.
+- `AzanUI/` — Modern React (Vite, TypeScript, Tailwind) frontend dashboard for managing AzanScheduler.
 
 ## Quick Start
 
@@ -42,8 +42,8 @@ $ git clone https://github.com/MoRefaie/Azan.git
 $ cd Azan
 ```
 
-### Backend (AzanSchedular)
-See [`AzanSchedular/README.md`](AzanSchedular/README.md) for backend setup and usage.
+### Backend (AzanScheduler)
+See [`AzanScheduler/README.md`](AzanScheduler/README.md) for backend setup and usage.
 
 ### Frontend (AzanUI)
 See [`AzanUI/README.md`](AzanUI/README.md) for frontend setup and usage.
@@ -58,7 +58,7 @@ This project is licensed under the MIT License. See [License.txt](License.txt).
 
 ## Issues & Support
 
-- For backend issues, see the [AzanSchedular](AzanSchedular/) directory.
+- For backend issues, see the [AzanScheduler](AzanScheduler/) directory.
 - For frontend issues, see the [AzanUI](AzanUI/) directory.
 - Open an issue or pull request for help or suggestions.
 

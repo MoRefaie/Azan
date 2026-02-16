@@ -5,7 +5,7 @@
 #define MyAppVersion "1.0"
 #define MyAppPublisher "Mohamed Refaie"
 #define MyAppURL "Refaie.moh@gmail.com"
-#define MyAppExeName "AzanSchedular.exe"
+#define MyAppExeName "AzanScheduler.exe"
 #define MyWebExeName "AzanUI.exe"
 
 [Setup]

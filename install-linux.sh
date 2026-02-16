@@ -23,14 +23,14 @@ sudo mkdir -p $INSTALL_DIR
 
 echo "Copying binaries..."
 sudo cp AzanUI $INSTALL_DIR/AzanUI
-sudo cp AzanSchedular $INSTALL_DIR/AzanSchedular
-sudo chmod +x $INSTALL_DIR/AzanUI $INSTALL_DIR/AzanSchedular
+sudo cp AzanScheduler $INSTALL_DIR/AzanScheduler
+sudo chmod +x $INSTALL_DIR/AzanUI $INSTALL_DIR/AzanScheduler
 
 echo "Setting ownership..."
 sudo chown -R root:root $INSTALL_DIR
 
 echo "Creating symlink..."
-sudo ln -sf $INSTALL_DIR/AzanSchedular /usr/local/bin/azan
+sudo ln -sf $INSTALL_DIR/AzanScheduler /usr/local/bin/azan
 
 echo "Creating systemd service..."
 sudo bash -c 'cat << SERVICE > /etc/systemd/system/azan.service
@@ -39,8 +39,8 @@ Description=Azan Service
 After=network.target
 
 [Service]
-ExecStartPre=/usr/bin/test -x /opt/azan/AzanSchedular
-ExecStart=/opt/azan/AzanSchedular
+ExecStartPre=/usr/bin/test -x /opt/azan/AzanScheduler
+ExecStart=/opt/azan/AzanScheduler
 WorkingDirectory=/opt/azan
 Restart=always
 User=root
