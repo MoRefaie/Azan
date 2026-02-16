@@ -3,7 +3,7 @@
 This is the monorepo for the Azan project, containing both the backend (AzanScheduler) and frontend (AzanUI) applications for managing and scheduling Azan (Islamic prayer calls).
 
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/MoRefaie/Azan/Azan-Build.yml?event=release)
+![Build Status](https://img.shields.io/github/actions/workflow/status/MoRefaie/Azan/Azan-Build.yml)
 ![Latest Release](https://img.shields.io/github/v/release/MoRefaie/Azan)
 ![License](https://img.shields.io/github/license/MoRefaie/Azan)
 
